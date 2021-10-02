@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">  
+    <title> Translate DOM Project </title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="sub-wrapper">
+            <div class="header">
+                <div class="lang">
+                    <label for="lang-selector" id="select_language">Choose your language</label>
+                    <select name="lang-selector" onchange="selectLanguage()" id="choose-lang">
+                        <option value=""></option>
+                        <option value="english">English</option>
+                        <option value="somali">Somali</option>
+                    </select>
+                </div>
+                <h1 id="header-title">Learn and Play</h1>
+                <h4 id="header-subtitle">Learn new words of another language</h4>
+            </div>
+
+            <div class="content">
+                <div class="question-div">
+                    <label for="" id="question-label">Translate this word:</label>
+                    <input type="text" id="question-input" disabled>
+                </div>
+                <div class="answer-div">
+                    <label for="" id="answer-label">Enter your answer:</label>
+                    <input type="text" id="answer-input">
+                </div>
+                <div class="buttons">
+                    <button class="btn" onclick="ChechAns()" id="submit-answer">Submit</button>
+                    <button class="btn" onclick="reset()" id="reset">Reset</button>
+                </div>
+                <p id="result"></p> 
+              
+            </div>
+        </div>
+    </div>
+
+ </body>
+<script src="app.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</html>
+
+
