@@ -16,7 +16,7 @@ function generateSom() {
 
 function selectLanguage(){
     let lan = document.getElementById("choose-lang").value;
-    if(lan==""){
+    if(lan == ""){
         alert("Please Select Language");
         reset();
     }
@@ -49,18 +49,31 @@ function selectLanguage(){
 function ChechAns(){
     let lan = document.getElementById("choose-lang").value;
     if(lan == "somali"){
-        let re = document.getElementById("result");
-        if((re.innerHTML = eng.some(checkinEng))){            
-        document.getElementById('answer-input').value ="";     
-        generateSom(); 
-          
-    }
+        let reQue =  document.getElementById("question-input").value;
+        let reAns =  document.getElementById("answer-input").value;
+        console.log(som.indexOf(reQue));
+        console.log(eng.indexOf(reAns));
+        if(som.indexOf(reQue) == eng.indexOf(reAns)){
+            document.getElementById('result').innerHTML="Correct";
+            document.getElementById('answer-input').value ="";  
+            document.getElementById("result").style.color = "green";  
+            generateSom(); 
+        }else{
+            document.getElementById('result').innerHTML="Incorrect";
+            document.getElementById("result").style.color = "red"; 
+        }
 }else if(lan == 'english'){
-    let re = document.getElementById('result');
-    if((re.innerHTML = som.some(checkinSom))){           
-        document.getElementById("answer-input").value ="";
-        genrateEgn();
-    }
+        let reQu = document.getElementById("question-input").value;
+        let reAn = document.getElementById("answer-input").value;
+        if(eng.indexOf(reQu) == som.indexOf(reAn)){
+            document.getElementById('result').innerHTML="Correct";
+            document.getElementById('answer-input').value ="";  
+            document.getElementById("result").style.color = "green"; 
+            generateEng(); 
+        }else{
+            document.getElementById("result").innerHTML="Incorrect";
+            document.getElementById("result").style.color = "red";
+        }
 }
 
 }
@@ -70,13 +83,4 @@ function reset() {
     document.getElementById('question-input').value="";
     document.getElementById('answer-input').value="";
   }
-
-function checkinSom(som) {
-    return som == document.getElementById("answer-input").value;
-    
-    
-  }
-function checkinEng(eng){
- return eng == document.getElementById("answer-input").value;
-}
 
