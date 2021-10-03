@@ -31,6 +31,12 @@ body{
     font-weight: 700;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+#question-input{
+    font-weight: 700;
+}
+#answer-input{
+    font-weight: 700;
+}
 .question-div {
     margin-bottom: 10px;
 }

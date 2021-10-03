@@ -1,6 +1,6 @@
 
-let som = ['Wiil','Gabar','Hooyo','Aabe','walal','Eedo','Jamacad','Tababar','Shaqo','Guri'];
-let eng = ['Boy','Girl','Mother','Father','Brother','aunt','University','Tranning','Job','Home'];
+let som = ['wiil','gabar','hooyo','aabe','walal','eedo','jamacad','tababar','shaqo','guri'];
+let eng = ['boy','girl','mother','father','brother','aunt','university','tranning','job','home'];
 
 function generateSom() {
     let randomSom = Math.floor(Math.random() * 10);
@@ -32,6 +32,7 @@ function selectLanguage(){
         
         document.getElementById('answer-input').value ="";
         generateSom();
+        
     }else if(lan == "english"){
         document.getElementById("select_language").innerHTML ="Select Language";
         document.getElementById("header-title").innerHTML ="Learn & Play";
@@ -50,7 +51,7 @@ function ChechAns(){
     let lan = document.getElementById("choose-lang").value;
     if(lan == "somali"){
         let reQue =  document.getElementById("question-input").value;
-        let reAns =  document.getElementById("answer-input").value;
+        let reAns =  document.getElementById("answer-input").value.toLowerCase();
         console.log(som.indexOf(reQue));
         console.log(eng.indexOf(reAns));
         if(som.indexOf(reQue) == eng.indexOf(reAns)){
@@ -64,7 +65,7 @@ function ChechAns(){
         }
 }else if(lan == 'english'){
         let reQu = document.getElementById("question-input").value;
-        let reAn = document.getElementById("answer-input").value;
+        let reAn = document.getElementById("answer-input").value.toLowerCase();
         if(eng.indexOf(reQu) == som.indexOf(reAn)){
             document.getElementById('result').innerHTML="Correct";
             document.getElementById('answer-input').value ="";  
