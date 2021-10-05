@@ -73,7 +73,8 @@ function ChechAns(){
             generateEng(); 
         }else{
             document.getElementById("result").innerHTML="Incorrect";
-            document.getElementById("result").style.color = "red";
+            //document.getElementById("result").style.color = "red";
+            document.getElementById("result").style.backgroundColor = "red";
         }
 }
 
